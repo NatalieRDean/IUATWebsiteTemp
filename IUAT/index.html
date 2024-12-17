@@ -1,0 +1,161 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+    <meta name="keywords" content="IUAT, Inter University Archery Tournament, Canadian, Canada, Archery">
+    <meta name="description" content="Inter University Archery Tournament Website">
+    <title>IUAT</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <!--<link rel="icon" type="image/x-icon" href="./resources/favicon.ico">-->
+    <!--Enables the implementation of jQuery functions.-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--schema.org markup for further seo and to fix google listing information.
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "IUAT",
+        "alternateName": ["Inter University Archery Tournament"],
+        "url": "",
+        "logo": "",
+        "sameAs": []
+      }
+    </script>-->
+</head>
+
+<body>
+    <!--header is used as the outermost container for header elements such as the website title, page redirects, and the website logo.-->
+    <header class="header">
+        <!--
+            The headers div is a second container that helps with using CSS to arrange groups of header elements.
+            In this case, it enables the header groups to be displayed using a flex display model.
+        -->
+        <div id="headers" class="headers">
+            <!--The headerLeft div is a container for the components we want to keep on the left side of the header.-->
+            <div id="headerLeft" class="header">                
+            </div>
+            <!--The headerCenter div is a container for the components we want to keep in the center of the header-->
+            <div id="headerCenter" class="header">
+                <!--
+                The headerLogo div is a container for placing the website logo.
+                It allows for more manageable arrangement of the logo with CSS.
+                -->
+                <div class="headerLogo">
+                    <!--This places the website/club logo image on the left side of the header using the image at the specified path.-->
+                    <h1 class="logo">IUAT</h1>
+                </div>
+                <!--
+                The headerButtons div is a container for all the page redirect buttons in the header.
+                It allows for more manageable arrangement of the buttons with CSS.
+                -->
+                <div class="headerButtons">
+                    <!--
+                    Each of these buttons is used to redirect to another page on the website.
+                    The actual functionality for doing this is done in JavaScript in the <script></script> section below.
+                    -->
+                    <button id="homeButton" class="button">Home</button>
+                    <button id="aboutButton" class="button">About</button>
+                    <button id="eventsButton" class="button">Events</button>
+                    <button id="contactButton" class="button">Contact</button>
+                    <button id="faqButton" class="button">FAQ</button>
+                </div>
+            </div>
+            <!--The headerRight div is a container for the components we want to keep on the right side of the header.-->
+            <div id="headerRight" class="header">
+            </div>
+        </div>
+        <div class="stripe stripe-1"></div>
+        <div class="stripe stripe-2"></div>
+        <div class="stripe stripe-3"></div>
+    </header>
+    <!--The mainContainer div is used as the outermost container for all of the page content that isn't in the header.-->
+    <div class="mainContainer">
+        <!--
+            The main div is a second container that helps with using CSS to arrange groups of main page elements.
+            In this case, it enables the main page groups to be displayed using a flex display model.
+            See the following link for details about the flex display and other display models https://www.w3schools.com/css/css3_flexbox.asp.
+        -->
+        <div class="main">
+            <!--
+            The mainTopBanner is a container for the banner image that helps with CSS styling.
+            In this case, it helps with cropping the banner image and keeping it centered across different window sizes.
+            -->
+            <div class="mainTopBanner">
+                <!--This places the banner image on the main page using the image at the specified path.-->
+                <!-- <img src="../resources/IUAT-Home-Banner.jpeg" alt="mainTopBanner" id="mainTopBanner"> -->
+                <div id="mainTopBanner">  
+                    <h1 class="title">Inter University<br>Archery<br>Tournament</h1>                 
+                </div>
+            </div>
+            <!--
+            The mainElements div is a container for a group of main page elements below the banner and helps with CSS styling.
+            In this case, it's primarily used to constrain the width of a specific group of elements.
+            Ex. at large window sizes the page text elements span the middle 50% of the page.
+            -->
+            <div class="mainElements">
+                <!--
+                The homeText div is a container for text elements.
+                In this case it's specifically used to contain left-justified text.
+                -->
+                <div class="homeText">
+                    <!--p defines a paragraph of text-->
+                    <p>
+                        Re-established in 2023, the Inter University Archery Tournament (IUAT) serves as the only national tournament 
+                        for Canadian postsecondary archery clubs. Previously, postsecondary archery clubs did not have a space to connect 
+                        and compete with other schools in an organised setting. IUAT aims to fill this gap. As of 2025, there are ten 
+                        participating schools. 
+                        <br>
+                        <br>
+                        It is organised by students, for students. 
+                        <br>
+                        <br>
+                        Participating schools may either mail in scores or send archers to the tournament space. They are able to compete in one of five categories: Olympic, Novice, Barebow, Compound, or Traditional. IUAT is an inclusive tournament, offering divisions for male, female, and open competitors. As well, accommodations are offered for para-archers wishing to participate. For any inquiries on how your club can get involved, please refer to our “Get Involved” section.
+
+                    </p>                    
+                </div>
+                <p>Example centered (and unstyled) text</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        /*
+        jQuery function that runs code within the curly braces after the HTML document is fully loaded and parsed.
+        This ensures that the script doesn't try to manipulate elements that haven't yet been created in the HTML.        
+        */
+        $(document).ready(function () {
+            //Return to home page when logo is clicked.
+            $('.logo').click(function (e) {
+                window.location = "/IUAT";
+            });
+
+            //Return to home page when button is clicked.
+            $('#homeButton').click(function (e) {
+                window.location = "/IUAT";
+            });
+
+            //Go to about page when button is clicked.
+            $('#aboutButton').click(function (e) {
+                window.location = "/IUAT/about";
+            });            
+
+            //Go to events page when button is clicked.
+            $('#eventsButton').click(function (e) {
+                window.location = "/IUAT/events";
+            });
+
+            //Go to contact page when button is clicked.
+            $('#contactButton').click(function (e) {
+                window.location = "/IUAT/contact";
+            });
+
+            //Go to FAQ page when button is clicked.
+            $('#faqButton').click(function (e) {
+                window.location = "/IUAT/faq";
+            });
+        });
+    </script>
+</body>
+
+</html>
