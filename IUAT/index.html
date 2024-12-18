@@ -112,78 +112,91 @@
         This ensures that the script doesn't try to manipulate elements that haven't yet been created in the HTML.        
         */
         $(document).ready(function () {
-            //Add header to page.
-            $('#header').load('../components/header.html');
+            //Function to load a component into a container and return a promise.
+            const loadComponent = (selector, url) => {
+                return new Promise((resolve, reject) => {
+                    $(selector).load(url, function(response, status) {
+                        if (status === "success") resolve();
+                        else reject(`Failed to load ${url}`);
+                    });
+                });
+            };
 
-            //Add footer to page.
-            $('#footer').load('../components/footer.html');
-            
+            //Create promises for components.
+            const headerPromise = loadComponent('#header', '../components/header.html');
+            const footerPromise = loadComponent('#footer', '../components/footer.html'); 
+           
             //Add english text to page
             $('.homeText').html(homeTextEN);
-            
-            //Return to home page when logo is clicked.
-            $('.logo').click(function (e) {
-                window.location = "/IUAT";
-            });
 
-            //Return to home page when button is clicked.
-            $('#homeButton').click(function (e) {
-                window.location = "/IUAT";
-            });
+            //Load all components.
+            Promise.all([headerPromise, footerPromise]).then(() => {
+                /* Put anything that requires header or footer components in here. */                              
 
-            //Go to about page when button is clicked.
-            $('#aboutButton').click(function (e) {
-                window.location = "/IUAT/about";
-            });            
-
-            //Go to events page when button is clicked.
-            $('#eventsButton').click(function (e) {
-                window.location = "/IUAT/events";
-            });
-
-            //Go to contact page when button is clicked.
-            $('#contactButton').click(function (e) {
-                window.location = "/IUAT/contact";
-            });
-
-            //Go to FAQ page when button is clicked.
-            $('#faqButton').click(function (e) {
-                window.location = "/IUAT/faq";
-            });
-
-            //Show dropdown content when user clicks lang button.
-            $('.langButton').click(function (e) {
-                $('.langDropdown').addClass("show");
-            });
-
-            //Close the dropdown menu if the user clicks outside of it.
-            $(window).click(function (e) {
-                if ($(e.target).is('.langButton')) return;
-                $(".langDropdown").each(function () {
-                    if ($(this).hasClass('show')) {
-                        $(this).removeClass('show');
-                    }
+                //Return to home page when logo is clicked.
+                $('.logo').click(function (e) {
+                    window.location = "/IUAT";
                 });
-            });
 
-            //Operations for when language is changed to english.
-            $('.ENButton').click(function (e) {
-                if($('.langButton').text()=="EN") return; //Do nothing if the page is already in english.
-                $('.langButton').text("EN");
-                $('#homeButton').text("Home");
-                $('#aboutButton').text("About");
-                $('#eventsButton').text("Events");
-                $('.homeText').html(homeTextEN);
-            });
+                //Return to home page when button is clicked.
+                $('#homeButton').click(function (e) {
+                    window.location = "/IUAT";
+                });
 
-            //Operations for when language is changed to french.
-            $('.FRButton').click(function (e) {
-                if($('.langButton').text()=="FR") return; //Do nothing if the page is already in french.
-                $('.langButton').text("FR");
-                $('#homeButton').text("Accueil");
-                $('#aboutButton').text("À Propos");
-                $('#eventsButton').text("Événements");
-                $('.homeText').html(homeTextFR);
+                //Go to about page when button is clicked.
+                $('#aboutButton').click(function (e) {
+                    window.location = "/IUAT/about";
+                });            
+
+                //Go to events page when button is clicked.
+                $('#eventsButton').click(function (e) {
+                    window.location = "/IUAT/events";
+                });
+
+                //Go to contact page when button is clicked.
+                $('#contactButton').click(function (e) {
+                    window.location = "/IUAT/contact";
+                });
+
+                //Go to FAQ page when button is clicked.
+                $('#faqButton').click(function (e) {
+                    window.location = "/IUAT/faq";
+                });
+
+                //Show dropdown content when user clicks lang button.
+                $('.langButton').click(function (e) {
+                    $('.langDropdown').addClass("show");
+                });
+
+                //Close the dropdown menu if the user clicks outside of it.
+                $(window).click(function (e) {
+                    if ($(e.target).is('.langButton')) return;
+                    $(".langDropdown").each(function () {
+                        if ($(this).hasClass('show')) {
+                            $(this).removeClass('show');
+                        }
+                    });
+                });
+
+                //Operations for when language is changed to english.
+                $('.ENButton').click(function (e) {
+                    if($('.langButton').text()=="EN") return; //Do nothing if the page is already in english.
+                    $('.langButton').text("EN");
+                    $('#homeButton').text("Home");
+                    $('#aboutButton').text("About");
+                    $('#eventsButton').text("Events");
+                    $('.homeText').html(homeTextEN);
+                });
+
+                //Operations for when language is changed to french.
+                $('.FRButton').click(function (e) {
+                    if($('.langButton').text()=="FR") return; //Do nothing if the page is already in french.
+                    $('.langButton').text("FR");
+                    $('#homeButton').text("Accueil");
+                    $('#aboutButton').text("À Propos");
+                    $('#eventsButton').text("Événements");
+                    $('.homeText').html(homeTextFR);
+                });
             });
         });
     </script>
