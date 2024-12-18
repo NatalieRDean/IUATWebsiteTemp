@@ -26,7 +26,6 @@ body {
   margin: 0;
   padding: 0;
   white-space: nowrap;
-  overflow: hidden;
   border: none;
   background: none;
   box-shadow: none;
@@ -47,31 +46,25 @@ div.header {
   flex: 1;
 }
 
-#headerRight {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 1;
-}
-
 #headerCenter {
   flex: 0;
 }
 
 h1.logo {
   color: #bbbbbb;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   margin: 0;
   padding: 0;
-  margin-top: 0.1em;
+  margin: 0.6rem 0.2rem 0;
   font-weight: bold;
   transform: scale(1.2, 1);
   font-size: 3rem;
+  cursor: pointer;
 }
 
 .headerButtons {
   margin: 0;
-  padding: 0.25em;
+  padding: 0.25rem;
 }
 
 .button {
@@ -81,12 +74,73 @@ h1.logo {
   letter-spacing: 0.4px;
   font-size: 17px;
   border: none;
-  padding: 0.5em 0.7em;
+  padding: 0.5rem 0.7rem;
   margin: 0.2rem 0.5rem;
+  cursor: pointer;
 }
 
 .button:hover {
   background-color: rgba(0, 0, 0, 0.15);
+}
+
+#headerRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.langDropdownItems {
+  position: relative;
+  margin-right: 1rem;
+}
+
+.langbutton {
+  background-color: rgba(255, 255, 255, 0);
+  color: #bbbbbb;
+  letter-spacing: 0.4px;
+  font-size: 17px;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  margin: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+.langbutton:hover, .langbutton:focus {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Dropdown Content (Hidden by Default) */
+.langDropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f6f6f6;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdownButton {
+  background-color: rgba(255, 255, 255, 0);
+  color: #202020;
+  letter-spacing: 0.4px;
+  font-size: 14px;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  margin: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.langDropdown a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu */
+.show {
+  display: grid;
 }
 
 .stripe {
@@ -129,7 +183,7 @@ h1.logo {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
   background-color: rgb(61, 61, 61);
   box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4);
 }
@@ -182,7 +236,7 @@ h1.title {
 .homeText {
   text-align: left;
   font-size: 18px;
-  margin: 2em 3em;
+  margin: 2rem 3rem;
 }
 
 /*====================== Mobile Layout Modifications ======================*/
@@ -202,8 +256,8 @@ h1.title {
   }
 
   .button {
-    padding: 0.2em 0.5em;
-    margin-bottom: 0.5em;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.5rem;
     border-radius: 4px;
     font-size: 14px;
   }
@@ -226,7 +280,7 @@ h1.title {
     align-items: center;
     justify-content: center;
     flex: 0;
-    padding-top: 0.4em;
+    padding-top: 0.4rem;
   }
 
   #headerCenter {
@@ -240,11 +294,11 @@ h1.title {
   #logo {
     width: 40px;
     min-width: 40px;
-    margin: 0.2em 1em;
+    margin: 0.2rem 1rem;
   }
 
   .main {
-    padding-bottom: 2em;
+    padding-bottom: 2rem;
   }
 
   .mainElements {
@@ -255,6 +309,6 @@ h1.title {
 
   .homeText {
     text-align: left;
-    margin: 1em 1.1em;
+    margin: 1rem 1.1rem;
   }
 }

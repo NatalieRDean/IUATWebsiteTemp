@@ -63,6 +63,13 @@
             </div>
             <!--The headerRight div is a container for the components we want to keep on the right side of the header.-->
             <div id="headerRight" class="header">
+                <div class="langDropdownItems">
+                    <button class="langButton">EN</button>
+                    <div id="langDropdown" class="langDropdown">
+                        <button class="dropdownButton ENButton">English</button>
+                        <button class="dropdownButton FRButton">Français</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="stripe stripe-1"></div>
@@ -99,20 +106,7 @@
                 In this case it's specifically used to contain left-justified text.
                 -->
                 <div class="homeText">
-                    <!--p defines a paragraph of text-->
-                    <p>
-                        Re-established in 2023, the Inter University Archery Tournament (IUAT) serves as the only national tournament 
-                        for Canadian postsecondary archery clubs. Previously, postsecondary archery clubs did not have a space to connect 
-                        and compete with other schools in an organised setting. IUAT aims to fill this gap. As of 2025, there are ten 
-                        participating schools. 
-                        <br>
-                        <br>
-                        It is organised by students, for students. 
-                        <br>
-                        <br>
-                        Participating schools may either mail in scores or send archers to the tournament space. They are able to compete in one of five categories: Olympic, Novice, Barebow, Compound, or Traditional. IUAT is an inclusive tournament, offering divisions for male, female, and open competitors. As well, accommodations are offered for para-archers wishing to participate. For any inquiries on how your club can get involved, please refer to our “Get Involved” section.
-
-                    </p>                    
+                    <!--Text added through JavaScript.-->                   
                 </div>
                 <p>Example centered (and unstyled) text</p>
             </div>
@@ -120,11 +114,49 @@
     </div>
     
     <script>
+        /* Text content in different languages */
+        var homeTextEN = `
+            <p>
+                Re-established in 2023, the Inter University Archery Tournament (IUAT) serves as the only national tournament 
+                for Canadian postsecondary archery clubs. Previously, postsecondary archery clubs did not have a space to connect 
+                and compete with other schools in an organised setting. IUAT aims to fill this gap. As of 2025, there are ten 
+                participating schools. 
+                <br>
+                <br>
+                It is organised by students, for students. 
+                <br>
+                <br>
+                Participating schools may either mail in scores or send archers to the tournament space. They are able to compete 
+                in one of five categories: Olympic, Novice, Barebow, Compound, or Traditional. IUAT is an inclusive tournament, 
+                offering divisions for male, female, and open competitors. As well, accommodations are offered for para-archers 
+                wishing to participate. For any inquiries on how your club can get involved, please refer to our "Get Involved" section.
+            </p>`;
+
+            var homeTextFR = `
+            <p>
+                Rétabli en 2023, l'Inter University Archery Tournament (IUAT) servit comme le seul tournoi national pour les clubs de
+                tir à l'arc postsecondaires canadiens. Précédemment, les clubs de tir à l'arc postsecondaires n'avaient pas d'espace
+                pour se connecter et se concurrencer avec les autres écoles dans un lieu organisé. IUAT aspire à combler cette lacune.
+                A partir de 2025, il y a dix écoles participantes. 
+                <br>
+                <br>
+                Il est organisé par des étudiants, pour des étudiants.
+                <br>
+                <br>
+                Les écoles participantes peuvent envoyer leurs scores ou envoyer des archers sur le site du tournoi. Ils peuvent concourir
+                dans l'une des cinq catégories suivantes: classique, novice, barebow, poulies, ou traditionnel. L'IUAT est un tournoi inclusif,
+                avec des divisions pour les hommes, les femmes, et l'ouvert. En plus, des hébergements sont proposés pour les para-archers
+                souhaitant participer. Pour toute question sur la manière dont votre club peut s'impliquer, veuillez consulter notre section
+                "S'engager"
+            </p>`;
+        
         /*
         jQuery function that runs code within the curly braces after the HTML document is fully loaded and parsed.
         This ensures that the script doesn't try to manipulate elements that haven't yet been created in the HTML.        
         */
         $(document).ready(function () {
+            $('.homeText').html(homeTextEN);
+            
             //Return to home page when logo is clicked.
             $('.logo').click(function (e) {
                 window.location = "/IUAT";
@@ -153,6 +185,39 @@
             //Go to FAQ page when button is clicked.
             $('#faqButton').click(function (e) {
                 window.location = "/IUAT/faq";
+            });
+
+            //Show dropdown content when user clicks lang button.
+            $('.langButton').click(function (e) {
+                $('.langDropdown').addClass("show");
+            });
+
+            //Close the dropdown menu if the user clicks outside of it.
+            $(window).click(function (e) {
+                if ($(e.target).is('.langButton')) return;
+                $(".langDropdown").each(function () {
+                    if ($(this).hasClass('show')) {
+                        $(this).removeClass('show');
+                    }
+                });
+            });
+
+            //Operations for when language is changed to english.
+            $('.ENButton').click(function (e) {
+                $('.langButton').text("EN");
+                $('#homeButton').text("Home");
+                $('#aboutButton').text("About");
+                $('#eventsButton').text("Events");
+                $('.homeText').html(homeTextEN);
+            });
+
+            //Operations for when language is changed to french.
+            $('.FRButton').click(function (e) {
+                $('.langButton').text("FR");
+                $('#homeButton').text("Accueil");
+                $('#aboutButton').text("À Propos");
+                $('#eventsButton').text("Événements");
+                $('.homeText').html(homeTextFR);
             });
         });
     </script>
