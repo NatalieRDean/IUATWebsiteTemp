@@ -204,6 +204,7 @@
 
             //Operations for when language is changed to english.
             $('.ENButton').click(function (e) {
+                if($('.langButton').text()=="EN") return; //Do nothing if the page is already in english.
                 $('.langButton').text("EN");
                 $('#homeButton').text("Home");
                 $('#aboutButton').text("About");
@@ -213,6 +214,7 @@
 
             //Operations for when language is changed to french.
             $('.FRButton').click(function (e) {
+                if($('.langButton').text()=="FR") return; //Do nothing if the page is already in french.
                 $('.langButton').text("FR");
                 $('#homeButton').text("Accueil");
                 $('#aboutButton').text("À Propos");
