@@ -1,0 +1,50 @@
+<header class="header">
+    <!--
+        The headers div is a second container that helps with using CSS to arrange groups of header elements.
+        In this case, it enables the header groups to be displayed using a flex display model.
+    -->
+    <div id="headers" class="headers">
+        <!--The headerLeft div is a container for the components we want to keep on the left side of the header.-->
+        <div id="headerLeft" class="header">                
+        </div>
+        <!--The headerCenter div is a container for the components we want to keep in the center of the header-->
+        <div id="headerCenter" class="header">
+            <!--
+            The headerLogo div is a container for placing the website logo.
+            It allows for more manageable arrangement of the logo with CSS.
+            -->
+            <div class="headerLogo">
+                <!--This places the website/club logo image on the left side of the header using the image at the specified path.-->
+                <h1 class="logo">IUAT</h1>
+            </div>
+            <!--
+            The headerButtons div is a container for all the page redirect buttons in the header.
+            It allows for more manageable arrangement of the buttons with CSS.
+            -->
+            <div class="headerButtons">
+                <!--
+                Each of these buttons is used to redirect to another page on the website.
+                The actual functionality for doing this is done in JavaScript in the <script></script> section below.
+                -->
+                <button id="homeButton" class="button">Home</button>
+                <button id="aboutButton" class="button">About</button>
+                <button id="eventsButton" class="button">Events</button>
+                <button id="contactButton" class="button">Contact</button>
+                <button id="faqButton" class="button">FAQ</button>
+            </div>
+        </div>
+        <!--The headerRight div is a container for the components we want to keep on the right side of the header.-->
+        <div id="headerRight" class="header">
+            <div class="langDropdownItems">
+                <button class="langButton">EN</button>
+                <div id="langDropdown" class="langDropdown">
+                    <button class="dropdownButton ENButton">English</button>
+                    <button class="dropdownButton FRButton">Français</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stripe stripe-1"></div>
+    <div class="stripe stripe-2"></div>
+    <div class="stripe stripe-3"></div>
+</header>

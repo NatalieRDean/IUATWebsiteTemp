@@ -27,56 +27,9 @@
 
 <body>
     <!--header is used as the outermost container for header elements such as the website title, page redirects, and the website logo.-->
-    <header class="header">
-        <!--
-            The headers div is a second container that helps with using CSS to arrange groups of header elements.
-            In this case, it enables the header groups to be displayed using a flex display model.
-        -->
-        <div id="headers" class="headers">
-            <!--The headerLeft div is a container for the components we want to keep on the left side of the header.-->
-            <div id="headerLeft" class="header">                
-            </div>
-            <!--The headerCenter div is a container for the components we want to keep in the center of the header-->
-            <div id="headerCenter" class="header">
-                <!--
-                The headerLogo div is a container for placing the website logo.
-                It allows for more manageable arrangement of the logo with CSS.
-                -->
-                <div class="headerLogo">
-                    <!--This places the website/club logo image on the left side of the header using the image at the specified path.-->
-                    <h1 class="logo">IUAT</h1>
-                </div>
-                <!--
-                The headerButtons div is a container for all the page redirect buttons in the header.
-                It allows for more manageable arrangement of the buttons with CSS.
-                -->
-                <div class="headerButtons">
-                    <!--
-                    Each of these buttons is used to redirect to another page on the website.
-                    The actual functionality for doing this is done in JavaScript in the <script></script> section below.
-                    -->
-                    <button id="homeButton" class="button">Home</button>
-                    <button id="aboutButton" class="button">About</button>
-                    <button id="eventsButton" class="button">Events</button>
-                    <button id="contactButton" class="button">Contact</button>
-                    <button id="faqButton" class="button">FAQ</button>
-                </div>
-            </div>
-            <!--The headerRight div is a container for the components we want to keep on the right side of the header.-->
-            <div id="headerRight" class="header">
-                <div class="langDropdownItems">
-                    <button class="langButton">EN</button>
-                    <div id="langDropdown" class="langDropdown">
-                        <button class="dropdownButton ENButton">English</button>
-                        <button class="dropdownButton FRButton">Français</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="stripe stripe-1"></div>
-        <div class="stripe stripe-2"></div>
-        <div class="stripe stripe-3"></div>
-    </header>
+    <div id="header">
+        <!--This is added from header.html using JavaScript.-->
+    </div>
     <!--The mainContainer div is used as the outermost container for all of the page content that isn't in the header.-->
     <div class="mainContainer">
         <!--
@@ -113,24 +66,9 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <div id="footers" class="footers">
-            <div id="footerTop" class="footerTops">  
-                <div id="footerLeft" class="footerTop">
-                    <p class="footerLogo">IUAT</p>
-                </div> 
-                <div id="footerCenter" class="footerTop">
-                    <p class="footerHeading">Quick Links</p>
-                </div>
-                <div id="footerRight" class="footerTop">
-                    <p class="footerHeading">Contact Us</p>
-                </div>             
-            </div>
-            <div id="footerBottom" class="footerBottom">
-                <p class="footerText">@ 2024 IUAT</p>
-            </div> 
-        </div> 
-    </footer>
+    <div id="footer">
+        <!--This is added from footer.html using JavaScript.-->
+    </div>
     
     <script>
         /* Text content in different languages */
@@ -174,6 +112,13 @@
         This ensures that the script doesn't try to manipulate elements that haven't yet been created in the HTML.        
         */
         $(document).ready(function () {
+            //Add header to page.
+            $('#header').load('../components/header.html');
+
+            //Add footer to page.
+            $('#footer').load('../components/footer.html');
+            
+            //Add english text to page
             $('.homeText').html(homeTextEN);
             
             //Return to home page when logo is clicked.
