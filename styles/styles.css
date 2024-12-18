@@ -1,9 +1,10 @@
+/* Current Color Pallette: [#081522, #ecd44c, #e44951, #00a4d4, #dfe6eb, #c0ced8"] */
 
 body {
-  background: #f6f6f6;
-  color: black;
+  background: #dfe6eb;
+  color: 081522;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
 }
 
@@ -14,7 +15,7 @@ body {
   box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4);
   text-align: center;
   padding: 0;
-  background-image: linear-gradient(to right, #1a1a1a, #303030, #1a1a1a);
+  background-color: #081522;
   width: 100%;
   height: auto;
   z-index: 11;
@@ -51,13 +52,13 @@ div.header {
 }
 
 h1.logo {
-  color: #bbbbbb;
+  color: #c0ced8;
   letter-spacing: 2px;
   margin: 0;
   padding: 0;
   margin: 0.6rem 0.2rem 0;
   font-weight: bold;
-  transform: scale(1.2, 1);
+  transform: scale(1.1, 1);
   font-size: 3rem;
   cursor: pointer;
 }
@@ -69,10 +70,9 @@ h1.logo {
 
 .button {
   background-color: rgba(255, 255, 255, 0);
-  color: #bbbbbb;
-  transform: scale(1.2, 1);
+  color: #c0ced8;
   letter-spacing: 0.4px;
-  font-size: 17px;
+  font-size: 19px;
   border: none;
   padding: 0.5rem 0.7rem;
   margin: 0.2rem 0.5rem;
@@ -97,7 +97,7 @@ h1.logo {
 
 .langbutton {
   background-color: rgba(255, 255, 255, 0);
-  color: #bbbbbb;
+  color: #c0ced8;
   letter-spacing: 0.4px;
   font-size: 17px;
   border: none;
@@ -114,7 +114,7 @@ h1.logo {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #f6f6f6;
+  background-color: #dfe6eb;
   min-width: 9rem;
   min-height: 4rem;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -134,7 +134,7 @@ h1.logo {
 
 /* Change color of dropdown links on hover */
 .dropdownButton:hover {
-  background-color: #dadada;
+  background-color: #c0ced8;
 }
 
 /* Show the dropdown menu */
@@ -184,7 +184,7 @@ h1.logo {
   justify-content: center;
   overflow: hidden;
   margin-bottom: 1rem;
-  background-color: rgb(61, 61, 61);
+  background-color: #081522;
   box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.4);
 }
 
@@ -215,13 +215,12 @@ h1.logo {
 }
 
 h1.title {
-  color: #dddddd;
+  color: #dfe6eb;
   letter-spacing: 3px;
   margin: 0;
   padding: 0;
   margin-top: 0.1em;
   font-weight: bold;
-  transform: scale(1.2, 1);
   font-size: min(7rem, 6vw);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
@@ -237,6 +236,87 @@ h1.title {
   text-align: left;
   font-size: 18px;
   margin: 2rem 3rem;
+}
+
+/*====================== Footer Components ======================*/
+.footer {
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  padding: 0;
+  background-color: #081522;
+  width: 100%;
+  height: auto;
+  z-index: 11;
+}
+
+.footers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.footerTops {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.footerTop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;  
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  flex: 1;
+}
+
+.footerHeading{
+  color: #c0ced8;
+  font-size: 16px;
+}
+
+.footerLogo {
+  color: #c0ced8;
+  font-size: 20px;
+}
+
+.footerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  border-top: 2px solid #050d15;
+  width: 90%
+}
+
+.footerText{
+  color: #c0ced8;
+  font-size: 12px;
+  padding: 0.5rem 0;  
 }
 
 /*====================== Mobile Layout Modifications ======================*/
