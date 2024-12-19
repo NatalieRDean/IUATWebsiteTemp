@@ -232,10 +232,15 @@ h1.title {
   max-width: 1340px;
 }
 
-.homeText {
+.bodyText {
   text-align: left;
   font-size: 18px;
   margin: 2rem 3rem;
+}
+
+/*====================== About Page Components ======================*/
+.aboutHeading1 {
+  font-size: 24px;
 }
 
 /*====================== Footer Components ======================*/
@@ -387,7 +392,7 @@ h1.title {
     border-radius: 8px;
   }
 
-  .homeText {
+  .bodyText {
     text-align: left;
     margin: 1rem 1.1rem;
   }

@@ -29,7 +29,8 @@
                 <button id="homeButton" class="button">Home</button>
                 <button id="aboutButton" class="button">About</button>
                 <button id="eventsButton" class="button">Events</button>
-                <button id="contactButton" class="button">Contact</button>
+                <button id="galleryButton" class="button">Gallery</button>
+                <button id="archivesButton" class="button">Archives</button>
                 <button id="faqButton" class="button">FAQ</button>
             </div>
         </div>
@@ -71,9 +72,14 @@
             window.location = "/IUAT/events";
         });
 
-        //Go to contact page when button is clicked.
-        $('#contactButton').click(function (e) {
-            window.location = "/IUAT/contact";
+        //Go to gallery page when button is clicked.
+        $('#galleryButton').click(function (e) {
+            window.location = "/IUAT/gallery";
+        });
+
+        //Go to events page when button is clicked.
+        $('#archivesButton').click(function (e) {
+            window.location = "/IUAT/archives";
         });
 
         //Go to FAQ page when button is clicked.

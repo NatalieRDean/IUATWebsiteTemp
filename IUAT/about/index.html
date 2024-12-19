@@ -3,26 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
-    <meta name="keywords" content="IUAT, Inter University Archery Tournament, Canadian, Canada, Archery">
-    <meta name="description" content="Inter University Archery Tournament Website">
-    <title>IUAT</title>
-    <link rel="stylesheet" href="../styles/styles.css">
+    <title>IUAT-about</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!--<link rel="icon" type="image/x-icon" href="./resources/favicon.ico">-->
     <!--Enables the implementation of jQuery functions.-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!--schema.org markup for further seo and to fix google listing information.
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "IUAT",
-        "alternateName": ["Inter University Archery Tournament"],
-        "url": "",
-        "logo": "",
-        "sameAs": []
-      }
-    </script>-->
 </head>
 
 <body>
@@ -46,7 +32,7 @@
                 <!--This places the banner image on the main page using the image at the specified path.-->
                 <!-- <img src="../resources/IUAT-Home-Banner.jpeg" alt="mainTopBanner" id="mainTopBanner"> -->
                 <div id="mainTopBanner">  
-                    <h1 class="homeTitle title">Inter University<br>Archery<br>Tournament</h1>                 
+                    <h1 class="aboutTitle title">About</h1>                 
                 </div>
             </div>
             <!--
@@ -54,15 +40,11 @@
             In this case, it's primarily used to constrain the width of a specific group of elements.
             Ex. at large window sizes the page text elements span the middle 50% of the page.
             -->
-            <div class="mainElements">
-                <!--
-                The homeText div is a container for text elements.
-                In this case it's specifically used to contain left-justified text.
-                -->
-                <div class="homeText bodyText">
+            <div class="mainElements">                
+                <p id="aboutHeading1" class="aboutHeading1">What is IUAT?</p>
+                <div class="aboutText1 bodyText">
                     <!--Text added through JavaScript.-->                   
                 </div>
-                <p>Example centered (and unstyled) text</p>
             </div>
         </div>
     </div>
@@ -70,7 +52,7 @@
         <!--This is added from footer.html using JavaScript.-->
     </div>
     
-    <script src="../scripts/translations.js"></script>
+    <script src="../../scripts/translations.js"></script>
     <script>
         /*
         jQuery function that runs code within the curly braces after the HTML document is fully loaded and parsed.
@@ -88,8 +70,8 @@
             };
 
             //Create promises for components.
-            const headerPromise = loadComponent('#header', '../components/header.html');
-            const footerPromise = loadComponent('#footer', '../components/footer.html');
+            const headerPromise = loadComponent('#header', '../../components/header.html');
+            const footerPromise = loadComponent('#footer', '../../components/footer.html');
 
             loadDefaultText();
 

@@ -1,6 +1,16 @@
 /* Text content in different languages */
 var homeTextEN = `
     <p>
+        Add info about this year's IUAT.
+    </p>`;
+
+var homeTextFR = `
+    <p>
+        Add info about this year's IUAT. (And translate to french)
+    </p>`;
+
+var aboutTextEN = `
+    <p>
         Re-established in 2023, the Inter University Archery Tournament (IUAT) serves as the only national tournament 
         for Canadian postsecondary archery clubs. Previously, postsecondary archery clubs did not have a space to connect 
         and compete with other schools in an organised setting. IUAT aims to fill this gap. As of 2025, there are ten 
@@ -16,7 +26,7 @@ var homeTextEN = `
         wishing to participate. For any inquiries on how your club can get involved, please refer to our "Get Involved" section.
     </p>`;
 
-var homeTextFR = `
+var aboutTextFR = `
     <p>
         Rétabli en 2023, l'Inter University Archery Tournament (IUAT) servit comme le seul tournoi national pour les clubs de
         tir à l'arc postsecondaires canadiens. Précédemment, les clubs de tir à l'arc postsecondaires n'avaient pas d'espace
@@ -34,11 +44,48 @@ var homeTextFR = `
         "S'engager"
     </p>`;
 
-function loadDefaultHomeText(){
-    $('.homeText').html(homeTextEN);
+
+const loadDefaultPageText = {
+    "IUAT": () => {
+      $('.homeText').html(homeTextEN);
+    },
+    "about": () => {
+      $('.aboutText1').html(aboutTextEN);
+    }
+};
+
+function loadDefaultText(){
+    const page = window.location.pathname.split('/').filter(Boolean).pop();
+    loadDefaultPageText[page]();
 }
 
+
+//Page specific english translation operations.
+const translatePageEN = {
+    "IUAT": () => {
+      $('.homeText').html(homeTextEN);
+    },
+    "about": () => {
+        $('.aboutTitle').text("About")
+        $('.aboutHeading1').text("What is IUAT?");
+        $('.aboutText1').html(aboutTextEN);
+    }
+};
+
+//Page specific french translation operations.
+const translatePageFR = {
+    "IUAT": () => {
+      $('.homeText').html(homeTextFR);
+    },
+    "about": () => {
+        $('.aboutTitle').text("À Propos")
+        $('.aboutHeading1').text("Qu'est-ce que l'IUAT?");
+        $('.aboutText1').html(aboutTextFR);
+    }
+};
+
 function loadTranslations(){
+    const page = window.location.pathname.split('/').filter(Boolean).pop();
 
     //Operations for when language is changed to english.
     $('.ENButton').click(function (e) {
@@ -47,7 +94,8 @@ function loadTranslations(){
         $('#homeButton').text("Home");
         $('#aboutButton').text("About");
         $('#eventsButton').text("Events");
-        $('.homeText').html(homeTextEN);
+        $('#galleryButton').text("Gallery");
+        translatePageEN[page](); //Page specific translation operations.        
         $('#linksHeading').text("Quick Links");
         $('#contactHeading').text("Contact Us");
     });
@@ -59,7 +107,8 @@ function loadTranslations(){
         $('#homeButton').text("Accueil");
         $('#aboutButton').text("À Propos");
         $('#eventsButton').text("Événements");
-        $('.homeText').html(homeTextFR);
+        $('#galleryButton').text("Galerie");
+        translatePageFR[page](); //Page specific translation operations. 
         $('#linksHeading').text("Liens Rapides");
         $('#contactHeading').text("Contactez-Nous");
     });
