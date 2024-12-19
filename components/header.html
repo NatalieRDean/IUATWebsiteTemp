@@ -48,3 +48,52 @@
     <div class="stripe stripe-2"></div>
     <div class="stripe stripe-3"></div>
 </header>
+
+<script>
+    $(document).ready(function () {          
+        //Return to home page when logo is clicked.
+        $('.logo').click(function (e) {
+            window.location = "/IUAT";
+        });
+
+        //Return to home page when button is clicked.
+        $('#homeButton').click(function (e) {
+            window.location = "/IUAT";
+        });
+
+        //Go to about page when button is clicked.
+        $('#aboutButton').click(function (e) {
+            window.location = "/IUAT/about";
+        });            
+
+        //Go to events page when button is clicked.
+        $('#eventsButton').click(function (e) {
+            window.location = "/IUAT/events";
+        });
+
+        //Go to contact page when button is clicked.
+        $('#contactButton').click(function (e) {
+            window.location = "/IUAT/contact";
+        });
+
+        //Go to FAQ page when button is clicked.
+        $('#faqButton').click(function (e) {
+            window.location = "/IUAT/faq";
+        });
+
+        //Show dropdown content when user clicks lang button.
+        $('.langButton').click(function (e) {
+            $('.langDropdown').addClass("show");
+        });
+
+        //Close the dropdown menu if the user clicks outside of it.
+        $(window).click(function (e) {
+            if ($(e.target).is('.langButton')) return;
+            $(".langDropdown").each(function () {
+                if ($(this).hasClass('show')) {
+                    $(this).removeClass('show');
+                }
+            });
+        });
+    });
+</script>
