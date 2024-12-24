@@ -3,26 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
-    <meta name="keywords" content="IUAT, Inter University Archery Tournament, Canadian, Canada, Archery">
-    <meta name="description" content="Inter University Archery Tournament Website">
-    <title>IUAT</title>
-    <link rel="stylesheet" href="../styles/styles.css">
+    <title>IUAT-about</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!--<link rel="icon" type="image/x-icon" href="./resources/favicon.ico">-->
     <!--Enables the implementation of jQuery functions.-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!--schema.org markup for further seo and to fix google listing information.
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "IUAT",
-        "alternateName": ["Inter University Archery Tournament"],
-        "url": "",
-        "logo": "",
-        "sameAs": []
-      }
-    </script>-->
 </head>
 
 <body>
@@ -32,7 +18,7 @@
     <div class="main">
         <div class="mainTopBanner">
             <div id="mainTopBanner">  
-                <h1 class="homeTitle title">Inter University<br>Archery<br>Tournament</h1>                 
+                <h1 class="homeTitle title">Events</h1>            
             </div>
         </div>
         <div class="mainContainer">
@@ -43,10 +29,10 @@
                 <p>Example centered (and unstyled) text</p>
             </div>            
         </div>
-        <div class="eventsContainer">
-            <div class="eventsElements">
+        <div class="itineraryContainer">
+            <div class="itineraryElements">
                 <p id="homeHeading1-2" class="homeHeading1">Winter 2025 Itinerary</p>
-                <div class="eventsText">
+                <div class="itineraryTables">
                     <!--Content added through JavaScript.-->
                 </div>
             </div>
@@ -56,7 +42,7 @@
         <!--This is added from footer.html using JavaScript.-->
     </div>
     
-    <script src="../scripts/translations.js"></script>
+    <script src="../../scripts/translations.js"></script>
     <script>
         /*
         jQuery function that runs code within the curly braces after the HTML document is fully loaded and parsed.
@@ -74,8 +60,8 @@
             };
 
             //Create promises for components.
-            const headerPromise = loadComponent('#header', '../components/header.html');
-            const footerPromise = loadComponent('#footer', '../components/footer.html');
+            const headerPromise = loadComponent('#header', '../../components/header.html');
+            const footerPromise = loadComponent('#footer', '../../components/footer.html');
 
             loadDefaultText();
 

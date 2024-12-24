@@ -1,7 +1,8 @@
 /* Text content in different languages */
 var homeTextEN = `
     <p class="introText">
-        Add info about this year's IUAT.
+        The winter 2025 IUAT will be taking place on _. It is being hosted by York University's Lions Archery Club and will take place in the _.
+        <br><br>Add more info about this year's IUAT.
     </p>`;
 
 var homeTextFR = `
@@ -9,7 +10,7 @@ var homeTextFR = `
         Add info about this year's IUAT. (Translate to french)
     </p>`;
 
-var homeItineraryEN = `
+var eventsItineraryEN = `
     <div id="itineraryTable-1" class="itineraryTable">
         <p id="homeHeading2-1" class="homeHeading2">Flight 1: Olympic</p>
         <table class="tableItinerary">
@@ -94,7 +95,7 @@ var homeItineraryEN = `
         </table>
     </div>`;
 
-var homeItineraryFR = `<p>Add translations.</p>`;
+var eventsItineraryFR = `<p>Add translations.</p>`;
 
 var aboutTextEN = `
     <p>
@@ -134,11 +135,13 @@ var aboutTextFR = `
 
 const loadDefaultPageText = {
     "IUAT": () => {
-      $('.homeText').html(homeTextEN);
-      $('.itineraryTables').html(homeItineraryEN);
+        $('.homeText').html(homeTextEN);      
     },
     "about": () => {
-      $('.aboutText1').html(aboutTextEN);
+        $('.aboutText1').html(aboutTextEN);
+    },
+    "events": () => {
+        $('.itineraryTables').html(eventsItineraryEN);
     }
 };
 
@@ -151,13 +154,15 @@ function loadDefaultText(){
 //Page specific english translation operations.
 const translatePageEN = {
     "IUAT": () => {
-      $('.homeText').html(homeTextEN);
-      $('.itineraryTables').html(homeItineraryEN);
+      $('.homeText').html(homeTextEN);      
     },
     "about": () => {
         $('.aboutTitle').text("About")
         $('.aboutHeading1').text("What is IUAT?");
         $('.aboutText1').html(aboutTextEN);
+    },
+    "events": () => {
+        $('.itineraryTables').html(eventsItineraryEN);
     }
 };
 
@@ -165,12 +170,14 @@ const translatePageEN = {
 const translatePageFR = {
     "IUAT": () => {
       $('.homeText').html(homeTextFR);
-      $('.itineraryTables').html(homeItineraryFR);
     },
     "about": () => {
         $('.aboutTitle').text("À Propos")
         $('.aboutHeading1').text("Qu'est-ce que l'IUAT?");
         $('.aboutText1').html(aboutTextFR);
+    },
+    "events": () => {
+        $('.itineraryTables').html(eventsItineraryFR);
     }
 };
 
