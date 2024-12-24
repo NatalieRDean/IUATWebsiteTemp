@@ -12,37 +12,19 @@
 </head>
 
 <body>
-    <!--header is used as the outermost container for header elements such as the website title, page redirects, and the website logo.-->
     <div id="header">
         <!--This is added from header.html using JavaScript.-->
     </div>
-    <!--The mainContainer div is used as the outermost container for all of the page content that isn't in the header.-->
     <div class="main">
-        <!--
-            The main div is a second container that helps with using CSS to arrange groups of main page elements.
-            In this case, it enables the main page groups to be displayed using a flex display model.
-            See the following link for details about the flex display and other display models https://www.w3schools.com/css/css3_flexbox.asp.
-        -->
-        <div class="mainContainer">
-            <!--
-            The mainTopBanner is a container for the banner image that helps with CSS styling.
-            In this case, it helps with cropping the banner image and keeping it centered across different window sizes.
-            -->
-            <div class="mainTopBanner">
-                <!--This places the banner image on the main page using the image at the specified path.-->
-                <!-- <img src="../resources/IUAT-Home-Banner.jpeg" alt="mainTopBanner" id="mainTopBanner"> -->
-                <div id="mainTopBanner">  
-                    <h1 class="aboutTitle title">About</h1>                 
-                </div>
+        <div class="mainTopBanner">
+            <div id="mainTopBanner">  
+                <h1 class="aboutTitle title">About</h1>                 
             </div>
-            <!--
-            The mainElements div is a container for a group of main page elements below the banner and helps with CSS styling.
-            In this case, it's primarily used to constrain the width of a specific group of elements.
-            Ex. at large window sizes the page text elements span the middle 50% of the page.
-            -->
+        </div>
+        <div class="mainContainer">            
             <div class="mainElements">                
-                <p id="aboutHeading1" class="aboutHeading1">What is IUAT?</p>
-                <div class="aboutText1 bodyText">
+                <p id="aboutHeading1-1" class="aboutHeading1">What is IUAT?</p>
+                <div class="aboutText">
                     <!--Text added through JavaScript.-->                   
                 </div>
             </div>

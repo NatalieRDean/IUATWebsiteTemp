@@ -35,18 +35,19 @@
                 <h1 class="homeTitle title">Inter University<br>Archery<br>Tournament</h1>                 
             </div>
         </div>
-        <div class="mainContainer">
-            <div class="mainElements">
-                <div class="homeText bodyText">
+        <div class="aboutContainer">
+            <div class="aboutElements">
+                <div class="homeAboutText">
                     <!--Text added through JavaScript.-->
                 </div>
-                <p>Example centered (and unstyled) text</p>
+                <div class="homeAboutButton">
+                    <button id="homeAboutButton" class="aboutButton">About IUAT <span class="buttonArrow">></span></button>
+                </div>
             </div>            
         </div>
         <div class="eventsContainer">
             <div class="eventsElements">
-                <p id="homeHeading1-2" class="homeHeading1">Winter 2025 Itinerary</p>
-                <div class="eventsText">
+                <div class="homeEventsText">
                     <!--Content added through JavaScript.-->
                 </div>
             </div>
@@ -84,6 +85,11 @@
                 /* Put anything that requires/involves header or footer components in here. */
 
                 loadTranslations();
+
+                //Go to about page when button is clicked.
+                $('#homeAboutButton').click(function (e) {
+                    window.location = "/IUAT/about";
+                }); 
 
             });
         });

@@ -1,13 +1,58 @@
 /* Text content in different languages */
-var homeTextEN = `
-    <p class="introText">
+var homeAboutTextEN = `
+    <p class="homeAboutIntroText">
+        Learn About IUAT and Its Format
+    </p>`;
+
+var homeAboutTextFR = `
+    <p class="homeAboutIntroText">
+        Learn About IUAT and Its Format (Translate to french)
+    </p>`;
+
+var aboutTextEN = `
+    <p class="aboutIntroText">
+        Re-established in 2023, the Inter University Archery Tournament (IUAT) serves as the only national tournament 
+        for Canadian postsecondary archery clubs. Previously, postsecondary archery clubs did not have a space to connect 
+        and compete with other schools in an organised setting. IUAT aims to fill this gap. As of 2025, there are ten 
+        participating schools. 
+        <br>
+        <br>
+        It is organised by students, for students. 
+        <br>
+        <br>
+        Participating schools may either mail in scores or send archers to the tournament space. They are able to compete 
+        in one of five categories: Olympic, Novice, Barebow, Compound, or Traditional. IUAT is an inclusive tournament, 
+        offering divisions for male, female, and open competitors. As well, accommodations are offered for para-archers 
+        wishing to participate. For any inquiries on how your club can get involved, please refer to our "Get Involved" section.
+    </p>`;
+
+var aboutTextFR = `
+    <p class="aboutIntroText">
+        Rétabli en 2023, l'Inter University Archery Tournament (IUAT) servit comme le seul tournoi national pour les clubs de
+        tir à l'arc postsecondaires canadiens. Précédemment, les clubs de tir à l'arc postsecondaires n'avaient pas d'espace
+        pour se connecter et se concurrencer avec les autres écoles dans un lieu organisé. IUAT aspire à combler cette lacune.
+        A partir de 2025, il y a dix écoles participantes. 
+        <br>
+        <br>
+        Il est organisé par des étudiants, pour des étudiants.
+        <br>
+        <br>
+        Les écoles participantes peuvent envoyer leurs scores ou envoyer des archers sur le site du tournoi. Ils peuvent concourir
+        dans l'une des cinq catégories suivantes: classique, novice, barebow, poulies, ou traditionnel. L'IUAT est un tournoi inclusif,
+        avec des divisions pour les hommes, les femmes, et l'ouvert. En plus, des hébergements sont proposés pour les para-archers
+        souhaitant participer. Pour toute question sur la manière dont votre club peut s'impliquer, veuillez consulter notre section
+        "S'engager"
+    </p>`;
+
+var eventsTextEN = `
+    <p class="IUAT2025IntroText">
         The winter 2025 IUAT will be taking place on _. It is being hosted by York University's Lions Archery Club and will take place in the _.
         <br><br>Add more info about this year's IUAT.
     </p>`;
 
-var homeTextFR = `
-    <p class="introText">
-        Add info about this year's IUAT. (Translate to french)
+var eventsTextFR = `
+    <p class="IUAT2025IntroText">
+        Add FR translations.
     </p>`;
 
 var eventsItineraryEN = `
@@ -97,50 +142,16 @@ var eventsItineraryEN = `
 
 var eventsItineraryFR = `<p>Add translations.</p>`;
 
-var aboutTextEN = `
-    <p>
-        Re-established in 2023, the Inter University Archery Tournament (IUAT) serves as the only national tournament 
-        for Canadian postsecondary archery clubs. Previously, postsecondary archery clubs did not have a space to connect 
-        and compete with other schools in an organised setting. IUAT aims to fill this gap. As of 2025, there are ten 
-        participating schools. 
-        <br>
-        <br>
-        It is organised by students, for students. 
-        <br>
-        <br>
-        Participating schools may either mail in scores or send archers to the tournament space. They are able to compete 
-        in one of five categories: Olympic, Novice, Barebow, Compound, or Traditional. IUAT is an inclusive tournament, 
-        offering divisions for male, female, and open competitors. As well, accommodations are offered for para-archers 
-        wishing to participate. For any inquiries on how your club can get involved, please refer to our "Get Involved" section.
-    </p>`;
-
-var aboutTextFR = `
-    <p>
-        Rétabli en 2023, l'Inter University Archery Tournament (IUAT) servit comme le seul tournoi national pour les clubs de
-        tir à l'arc postsecondaires canadiens. Précédemment, les clubs de tir à l'arc postsecondaires n'avaient pas d'espace
-        pour se connecter et se concurrencer avec les autres écoles dans un lieu organisé. IUAT aspire à combler cette lacune.
-        A partir de 2025, il y a dix écoles participantes. 
-        <br>
-        <br>
-        Il est organisé par des étudiants, pour des étudiants.
-        <br>
-        <br>
-        Les écoles participantes peuvent envoyer leurs scores ou envoyer des archers sur le site du tournoi. Ils peuvent concourir
-        dans l'une des cinq catégories suivantes: classique, novice, barebow, poulies, ou traditionnel. L'IUAT est un tournoi inclusif,
-        avec des divisions pour les hommes, les femmes, et l'ouvert. En plus, des hébergements sont proposés pour les para-archers
-        souhaitant participer. Pour toute question sur la manière dont votre club peut s'impliquer, veuillez consulter notre section
-        "S'engager"
-    </p>`;
-
 
 const loadDefaultPageText = {
     "IUAT": () => {
-        $('.homeText').html(homeTextEN);      
+        $('.homeAboutText').html(homeAboutTextEN);     
     },
     "about": () => {
-        $('.aboutText1').html(aboutTextEN);
+        $('.aboutText').html(aboutTextEN);
     },
     "events": () => {
+        $('.eventsText').html(eventsTextEN);
         $('.itineraryTables').html(eventsItineraryEN);
     }
 };
@@ -154,12 +165,12 @@ function loadDefaultText(){
 //Page specific english translation operations.
 const translatePageEN = {
     "IUAT": () => {
-      $('.homeText').html(homeTextEN);      
+      $('.homeText').html(homeAboutTextEN);      
     },
     "about": () => {
         $('.aboutTitle').text("About")
         $('.aboutHeading1').text("What is IUAT?");
-        $('.aboutText1').html(aboutTextEN);
+        $('.aboutText').html(aboutTextEN);
     },
     "events": () => {
         $('.itineraryTables').html(eventsItineraryEN);
@@ -169,12 +180,12 @@ const translatePageEN = {
 //Page specific french translation operations.
 const translatePageFR = {
     "IUAT": () => {
-      $('.homeText').html(homeTextFR);
+      $('.homeText').html(homeAboutTextFR);
     },
     "about": () => {
         $('.aboutTitle').text("À Propos")
         $('.aboutHeading1').text("Qu'est-ce que l'IUAT?");
-        $('.aboutText1').html(aboutTextFR);
+        $('.aboutText').html(aboutTextFR);
     },
     "events": () => {
         $('.itineraryTables').html(eventsItineraryFR);
