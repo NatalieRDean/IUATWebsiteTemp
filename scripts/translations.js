@@ -1,13 +1,100 @@
 /* Text content in different languages */
 var homeTextEN = `
-    <p>
+    <p class="introText">
         Add info about this year's IUAT.
     </p>`;
 
 var homeTextFR = `
-    <p>
-        Add info about this year's IUAT. (And translate to french)
+    <p class="introText">
+        Add info about this year's IUAT. (Translate to french)
     </p>`;
+
+var homeItineraryEN = `
+    <div id="itineraryTable-1" class="itineraryTable">
+        <p id="homeHeading2-1" class="homeHeading2">Flight 1: Olympic</p>
+        <table class="tableItinerary">
+            <tr class="tableItinerary">
+                <th class="thTime">9:00am:</th>
+                <th class="thEvent">Doors open, Setup</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">9:30am:</th>
+                <th class="thEvent">Rules, Welcome, 3 Warmup rounds</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">10:00am:</th>
+                <th class="thEvent">Scoring starts</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">11:30am:</th>
+                <th class="thEvent">Scoring ends, Food</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">12:15pm:</th>
+                <th class="thEvent">Announce winners</th>
+            </tr>
+        </table>
+    </div>
+    <div id="itineraryTable-2" class="itineraryTable">
+        <p id="homeHeading2-2" class="homeHeading2">Flight 2: Novice</p>
+        <table class="tableItinerary">
+            <tr class="tableItinerary">
+                <th class="thTime">12:00pm:</th>
+                <th class="thEvent">Doors open, Setup</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">12:30pm:</th>
+                <th class="thEvent">Rules, Welcome, 3 Warmup rounds</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">1:00pm:</th>
+                <th class="thEvent">Scoring starts (10 minute break at end 5)</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">2:40pm:</th>
+                <th class="thEvent">Scoring ends, Food</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">3:25pm:</th>
+                <th class="thEvent">Announce winners</th>
+            </tr>
+        </table>
+    </div>
+    <div id="itineraryTable-3" class="itineraryTable">
+        <p id="homeHeading2-3" class="homeHeading2">Flight 3: Compound, Traditional, Barebow</p>
+        <table class="tableItinerary">
+            <tr class="tableItinerary">
+                <th class="thTime">3:10pm:</th>
+                <th class="thEvent">Doors open, Setup</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">3:40pm:</th>
+                <th class="thEvent">Rules, Welcome, 3 Warmup rounds</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">4:10pm:</th>
+                <th class="thEvent">Scoring starts</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">5:40pm:</th>
+                <th class="thEvent">Scoring ends, Food</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">6:25pm:</th>
+                <th class="thEvent">Announce winners, Begin clean up</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">6:30pm:</th>
+                <th class="thEvent">Team pictures/media</th>
+            </tr>
+            <tr class="tableItinerary">
+                <th class="thTime">8:00pm:</th>
+                <th class="thEvent">Finish clean up, Leave gym</th>
+            </tr>
+        </table>
+    </div>`;
+
+var homeItineraryFR = `<p>Add translations.</p>`;
 
 var aboutTextEN = `
     <p>
@@ -48,6 +135,7 @@ var aboutTextFR = `
 const loadDefaultPageText = {
     "IUAT": () => {
       $('.homeText').html(homeTextEN);
+      $('.itineraryTables').html(homeItineraryEN);
     },
     "about": () => {
       $('.aboutText1').html(aboutTextEN);
@@ -64,6 +152,7 @@ function loadDefaultText(){
 const translatePageEN = {
     "IUAT": () => {
       $('.homeText').html(homeTextEN);
+      $('.itineraryTables').html(homeItineraryEN);
     },
     "about": () => {
         $('.aboutTitle').text("About")
@@ -76,6 +165,7 @@ const translatePageEN = {
 const translatePageFR = {
     "IUAT": () => {
       $('.homeText').html(homeTextFR);
+      $('.itineraryTables').html(homeItineraryFR);
     },
     "about": () => {
         $('.aboutTitle').text("À Propos")

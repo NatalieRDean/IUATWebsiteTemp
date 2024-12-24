@@ -1,4 +1,4 @@
-/* Current Color Pallette: [#081522, #ecd44c, #e44951, #00a4d4, #dfe6eb, #c0ced8"] */
+/* Current Color Pallette: [#081522, #bbc9d6, #ddc747, #cf4249, #0196c4, #dfe6eb, #c0ced8"] */
 
 body {
   background: #dfe6eb;
@@ -149,29 +149,25 @@ h1.logo {
 
 .stripe-1 {
   height: 8px;
-  background-image: linear-gradient(to bottom, #ddc747, #ecd44c);
+  background-color: #ddc747;
 }
 
 .stripe-2 {
   height: 10px;
-  background-image: linear-gradient(to bottom, #cf4249, #e44951);
+  background-color: #cf4249;
 }
 
 .stripe-3 {
   height: 12px;
-  background-image: linear-gradient(to bottom, #0196c4, #00a4d4);
+  background-color: #0196c4;
 }
 /*====================== Header Components End ======================*/
 
-.mainContainer {
-  width: 100%;
-}
-
 .main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5em;
 }
 
 /*====================== Banner Components ======================*/
@@ -226,17 +222,121 @@ h1.title {
 }
 
 /*====================== Main Text Components ======================*/
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .mainElements {
   width: 70%;
-  min-width: 680px;
+  min-width: 690px;
   max-width: 1340px;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeHeading1{
+  font-size: 24px;
 }
 
 .bodyText {
   text-align: left;
-  font-size: 18px;
   margin: 2rem 3rem;
 }
+
+.introText {
+  font-size: 18px;
+}
+
+.itineraryContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0f263e;
+}
+
+.itineraryElements {
+  width: 90vw;  
+  max-width: 97rem;
+  min-width: 68rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#homeHeading1-2{
+  color: #dfe6eb;
+  margin: 1rem 0 0;
+  padding: 0.5rem;
+}
+
+.itineraryTables{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;  
+}
+
+.itineraryTable{
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#itineraryTable-1{
+  background-color: #ddc747;
+}
+
+#itineraryTable-2{
+  background-color: #cf4249;
+}
+
+#itineraryTable-3{
+  background-color: #0196c4;
+}
+
+.homeHeading2{
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 0.25rem;  
+}
+
+table.tableItinerary{
+  margin: 0;
+  padding: 0;
+}
+
+tr.tableItinerary{
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+th{
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+.thTime{
+  
+  display: flex;
+  flex-direction: column;
+  width: 5rem;
+}
+
+/* .thEvent{
+} */
 
 /*====================== About Page Components ======================*/
 .aboutHeading1 {
@@ -324,26 +424,34 @@ h1.title {
   padding: 0.5rem 0;  
 }
 
+/*====================== Small Tablet Layout Modifications ======================*/
+@media only screen and (max-width: 1185px) {
+  .itineraryElements{
+    flex-direction: column;
+    width: 50vw;  
+    max-width: none;
+    min-width: 33rem;
+  }
+  
+  .itineraryTables{
+    flex-direction: column;
+  }
+}
+
 /*====================== Mobile Layout Modifications ======================*/
 @media only screen and (max-width: 768px) {
-  h1 {
-    margin: 0.1em 0;
-    font-size: 24px;
+  h1.logo {
+    font-size: 2rem;
   }
 
   h2 {
     font-size: 18px;
   }
 
-  p,
-  ul {
-    font-size: 13px;
-  }
-
   .button {
-    padding: 0.2rem 0.5rem;
+    padding: 0.5rem 0.3rem;
+    margin: 0;
     margin-bottom: 0.5rem;
-    border-radius: 4px;
     font-size: 14px;
   }
 
@@ -351,29 +459,31 @@ h1.title {
     padding: 0;
   }
 
-  .headers {
-    flex-flow: column wrap;
-  }
+  /* .headers {
+  } */
 
   .headerButtons {
     margin: 0;
-    padding: 0;
+    padding: 0 0 0.3rem;
   }
 
   #headerLeft {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0;
-    padding-top: 0.4rem;
+    flex: 1;
+    min-width: 3rem;
   }
 
   #headerCenter {
-    flex: 1;
+    flex: 2;
   }
 
   #headerRight {
-    display: none;
+    flex: 1;
+    min-width: 3rem;
+  }
+
+  .langbutton {
+    font-size: 13px;
+    padding: 0.6rem 0.8rem;
   }
 
   #logo {
@@ -382,18 +492,34 @@ h1.title {
     margin: 0.2rem 1rem;
   }
 
-  .main {
-    padding-bottom: 2rem;
-  }
-
   .mainElements {
-    width: 80%;
-    min-width: 320px;
-    border-radius: 8px;
+    min-width: 90%;
   }
 
-  .bodyText {
-    text-align: left;
-    margin: 1rem 1.1rem;
+  .introText {
+    font-size: 16px;
+  }
+
+  #homeHeading1-2{
+    font-size: 18px;
+  }
+  
+  .homeHeading2{
+    font-size: 16px;
+  }
+  
+  .itineraryElements{
+    width: 90vw;  
+    max-width: 31rem;
+    min-width: 18rem;
+  }
+
+  .itineraryTable{
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  tr.tableItinerary{
+    font-size: 16px;
   }
 }
