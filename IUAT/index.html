@@ -50,6 +50,11 @@
                 <div class="homeEventsText">
                     <!--Content added through JavaScript.-->
                 </div>
+                <div class="homeEventsButton">
+                    <div class="homeEventsImage">
+                        <button id="homeEventsButton" class="eventsButton">IUAT Events <span class="buttonArrow">></span></button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -90,6 +95,11 @@
                 $('#homeAboutButton').click(function (e) {
                     window.location = "/IUAT/about";
                 }); 
+
+                //Go to about page when button is clicked.
+                $('#homeEventsButton').click(function (e) {
+                    window.location = "/IUAT/events";
+                });
 
             });
         });

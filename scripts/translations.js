@@ -9,6 +9,16 @@ var homeAboutTextFR = `
         Learn About IUAT and Its Format (Translate to french)
     </p>`;
 
+var homeEventsTextEN = `
+    <p class="homeEventsIntroText">
+        IUAT Events and 2025 IUAT
+    </p>`;
+
+var homeEventsTextFR = `
+    <p class="homeEventsIntroText">
+        IUAT Events and This Year's Itinerary (Translate to french)
+    </p>`;
+
 var aboutTextEN = `
     <p class="aboutIntroText">
         Re-established in 2023, the Inter University Archery Tournament (IUAT) serves as the only national tournament 
@@ -46,7 +56,7 @@ var aboutTextFR = `
 
 var eventsTextEN = `
     <p class="IUAT2025IntroText">
-        The winter 2025 IUAT will be taking place on _. It is being hosted by York University's Lions Archery Club and will take place in the _.
+        The 2025 IUAT will be taking place on _. It is being hosted by York University's Lions Archery Club and will take place in the _.
         <br><br>Add more info about this year's IUAT.
     </p>`;
 
@@ -57,7 +67,7 @@ var eventsTextFR = `
 
 var eventsItineraryEN = `
     <div id="itineraryTable-1" class="itineraryTable">
-        <p id="homeHeading2-1" class="homeHeading2">Flight 1: Olympic</p>
+        <p id="itineraryHeading2-1" class="itineraryHeading2">Flight 1: Olympic</p>
         <table class="tableItinerary">
             <tr class="tableItinerary">
                 <th class="thTime">9:00am:</th>
@@ -82,7 +92,7 @@ var eventsItineraryEN = `
         </table>
     </div>
     <div id="itineraryTable-2" class="itineraryTable">
-        <p id="homeHeading2-2" class="homeHeading2">Flight 2: Novice</p>
+        <p id="itineraryHeading2-2" class="itineraryHeading2">Flight 2: Novice</p>
         <table class="tableItinerary">
             <tr class="tableItinerary">
                 <th class="thTime">12:00pm:</th>
@@ -107,7 +117,7 @@ var eventsItineraryEN = `
         </table>
     </div>
     <div id="itineraryTable-3" class="itineraryTable">
-        <p id="homeHeading2-3" class="homeHeading2">Flight 3: Compound, Traditional, Barebow</p>
+        <p id="itineraryHeading2-3" class="itineraryHeading2">Flight 3: Compound, Traditional, Barebow</p>
         <table class="tableItinerary">
             <tr class="tableItinerary">
                 <th class="thTime">3:10pm:</th>
@@ -145,7 +155,8 @@ var eventsItineraryFR = `<p>Add translations.</p>`;
 
 const loadDefaultPageText = {
     "IUAT": () => {
-        $('.homeAboutText').html(homeAboutTextEN);     
+        $('.homeAboutText').html(homeAboutTextEN); 
+        $('.homeEventsText').html(homeEventsTextEN);    
     },
     "about": () => {
         $('.aboutText').html(aboutTextEN);
@@ -165,7 +176,8 @@ function loadDefaultText(){
 //Page specific english translation operations.
 const translatePageEN = {
     "IUAT": () => {
-      $('.homeText').html(homeAboutTextEN);      
+      $('.homeText').html(homeAboutTextEN); 
+      $('.homeEventsText').html(homeEventsTextEN);     
     },
     "about": () => {
         $('.aboutTitle').text("About")
@@ -181,6 +193,7 @@ const translatePageEN = {
 const translatePageFR = {
     "IUAT": () => {
       $('.homeText').html(homeAboutTextFR);
+      $('.homeEventsText').html(homeEventsTextFR);
     },
     "about": () => {
         $('.aboutTitle').text("À Propos")
